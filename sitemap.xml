@@ -5,4 +5,14 @@
          <lastmod>2024-03-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://www.technotes.ie/lets_encrypt/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.technotes.ie/mkdocs/</loc>
+         <lastmod>2024-03-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
