@@ -228,6 +228,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to generate SSL/TLS certs for you site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-getssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install getssl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-ssltls-certs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate SSL/TLS certs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -291,6 +315,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="How to generate SSL/TLS certs for you site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-getssl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Install getssl
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generate-ssltls-certs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generate SSL/TLS certs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -311,6 +359,35 @@
 <h1 id="lets-encrypt-and-getssl">Let's Encrypt and getssl</h1>
 <h2 id="how-to-generate-ssltls-certs-for-you-site">How to generate SSL/TLS certs for you site</h2>
 <p>I use <a href="https://letsencrypt.org/">Let's Encrypt</a> to generate SSL/TLS certs for my site. In order to help automate this I use <a href="https://github.com/srvrco/getssl">getssl</a></p>
+<h3 id="install-getssl">Install getssl</h3>
+<pre><code>curl --silent --user-agent getssl/manual https://raw.githubusercontent.com/srvrco/getssl/latest/getssl --output getssl
+chmod u+x getssl
+cp ./getssl /usr/local/bin/
+</code></pre>
+<h3 id="generate-ssltls-certs">Generate SSL/TLS certs</h3>
+<p>Follow the <a href="https://github.com/srvrco/getssl?tab=readme-ov-file#getting-started">getting started</a> steps to generate the configuration for your domain.</p>
+<p>Once that's done run</p>
+<pre><code>getssl -c &lt;yourdomain.com&gt;
+</code></pre>
+<p>The configuration changes that I needed to make were to use this CA to allow for full cert generation.</p>
+<pre><code>CA="https://acme-v02.api.letsencrypt.org"
+</code></pre>
+<p>I had no subdomains, so:</p>
+<pre><code>SANS=""
+</code></pre>
+<p>Use a <code>production</code> certificate and use the full chain file</p>
+<pre><code>PREFERRED_CHAIN="ISRG Root X2"
+FULL_CHAIN_INCLUDE_ROOT="true"
+</code></pre>
+<p>Save your changes and run:</p>
+<pre><code>getssl -f &lt;yourdomain.com&gt;
+</code></pre>
+<p>Then upload your cert files to your site, e.g.</p>
+<pre><code>fullchain.crt
+&lt;yourdomain.com&gt;.crt
+&lt;yourdomain.com&gt;.key
+</code></pre>
+<p>You can use the SSL labs site to validate your cert: <a href="https://www.ssllabs.com/ssltest/index.html">https://www.ssllabs.com/ssltest/index.html</a></p>
 
 
 
