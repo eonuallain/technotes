@@ -1,1 +1,5 @@
-site_name: My Docs
+site_name: www.technotes.ie
+site_url: https://www.technotes.ie
+theme:
+  material
+plugins: []
