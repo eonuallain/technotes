@@ -2,4 +2,10 @@ site_name: www.technotes.ie
 site_url: https://www.technotes.ie
 theme:
   material
-plugins: []
+plugins:
+  - diagrams:
+      file_extension: ".diagrams.py"
+      max_workers: 5
+  - kroki:
+      FileTypes:
+        - svg
