@@ -2,22 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.technotes.ie/</loc>
-         <lastmod>2024-03-09</lastmod>
+         <lastmod>2024-03-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.technotes.ie/assembler_helloworld/</loc>
+         <lastmod>2024-03-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.technotes.ie/diagram_as_code/</loc>
-         <lastmod>2024-03-09</lastmod>
+         <lastmod>2024-03-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.technotes.ie/k8s_cluster_pi/</loc>
+         <lastmod>2024-03-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.technotes.ie/lets_encrypt/</loc>
-         <lastmod>2024-03-09</lastmod>
+         <lastmod>2024-03-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.technotes.ie/mkdocs/</loc>
-         <lastmod>2024-03-09</lastmod>
+         <lastmod>2024-03-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

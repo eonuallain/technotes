@@ -174,11 +174,51 @@
   
   
     <li class="md-nav__item">
+      <a href="../assembler_helloworld/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Assembler helloworld
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../diagram_as_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Diagram as code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../k8s_cluster_pi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Running Kubernetes on a raspberry Pi
   </span>
   
 
@@ -381,11 +421,18 @@
 <pre><code>mkdir my-docs
 cd my-docs
 
-python -m venv .venv
-source .venv/bin/activate (linux)
-.venv\Scripts\activate (windows)
+sudo apt-get update
+sudo apt-get install python3-virtualenv
+virtualenv --python=/usr/bin/python3.10 .venv
+python3.10 -m venv .venv
+source .venv/bin/activate
 pip install mkdocs
 pip install mkdocs-material
+pip install svglib reportlab
+pip install rlPyCairo
+
+# possibly also
+pip install --upgrade --force-reinstall reportlab
 
 mkdocs new .
 mkdocs serve
