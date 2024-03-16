@@ -5,11 +5,18 @@ This site was made using [mkdocs](https://www.mkdocs.org/). Follow these steps t
     mkdir my-docs
     cd my-docs
 
-    python -m venv .venv
-    source .venv/bin/activate (linux)
-    .venv\Scripts\activate (windows)
+    sudo apt-get update
+    sudo apt-get install python3-virtualenv
+    virtualenv --python=/usr/bin/python3.10 .venv
+    python3.10 -m venv .venv
+    source .venv/bin/activate
     pip install mkdocs
     pip install mkdocs-material
+    pip install svglib reportlab
+    pip install rlPyCairo
+
+    # possibly also
+    pip install --upgrade --force-reinstall reportlab
 
     mkdocs new .
     mkdocs serve
