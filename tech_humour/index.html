@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://www.technotes.ie/assembler_helloworld/">
+        <link rel="canonical" href="https://www.technotes.ie/tech_humour/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../mkdocs/">
       
-      
-        <link rel="next" href="../diagram_as_code/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Assembler helloworld - www.technotes.ie</title>
+        <title>Tech humour - www.technotes.ie</title>
       
     
     
@@ -63,11 +61,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#assembler-helloworld" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Assembler helloworld
+              Tech humour
             
           </span>
         </div>
@@ -173,28 +166,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Assembler helloworld
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../assembler_helloworld/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -203,33 +178,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#assembler-helloworld" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assembler helloworld
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -318,10 +266,17 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tech_humour/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -330,6 +285,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -352,23 +308,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#assembler-helloworld" class="md-nav__link">
-    <span class="md-ellipsis">
-      Assembler helloworld
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -382,50 +321,10 @@
                   
 
 
-  <h1>Assembler helloworld</h1>
+  <h1>Tech humour</h1>
 
-<h2 id="assembler-helloworld">Assembler helloworld</h2>
-<p>Install <code>nasm</code> if not available on your system. On my Ubuntu box I ran</p>
-<pre><code>sudo apt install -y nasm
-</code></pre>
-<p>Save the following to <code>helloworld.asm</code></p>
-<pre><code>section .data
-    hello db 'Hello, World!', 0
-
-section .text
-    global _start
-
-_start:
-    ; write the string to stdout
-    mov eax, 4
-    mov ebx, 1
-    mov ecx, hello
-    mov edx, 13
-    int 0x80
-
-    ; exit the program
-    mov eax, 1
-    xor ebx, ebx
-    int 0x80
-</code></pre>
-<p>Compile <code>helloworld.asm</code> with</p>
-<pre><code>nasm -f elf32 -o helloworld.o helloworld.asm
-</code></pre>
-<p>Use the GNU linker to create an output file (executable) <code>helloworld</code> from the <code>helloworld.o</code> object file</p>
-<pre><code>ld -m elf_i386 -o helloworld helloworld.o
-</code></pre>
-<p><code>ld -V</code> will list the available emulations which can be used with the above <code>-m</code> parameter</p>
-<pre><code>GNU ld (GNU Binutils for Ubuntu) 2.38
-  Supported emulations:
-   elf_x86_64
-   elf32_x86_64
-   elf_i386
-   elf_iamcu
-   elf_l1om
-   elf_k1om
-   i386pep
-   i386pe
-</code></pre>
+<p>Checkout the Krazam youtube channel. For the SRE/Ops people:</p>
+<p><a href="https://www.youtube.com/watch?v=ia8Q51ouA_s"><img alt="Krazam" src="../code/diagrams/krazam-youtube-sre.png" /></a></p>
 
 
 
