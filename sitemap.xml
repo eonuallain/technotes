@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.technotes.ie/assembler_helloworld/</loc>
-         <lastmod>2024-03-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://www.technotes.ie/diagram_as_code/</loc>
          <lastmod>2024-03-17</lastmod>
          <changefreq>daily</changefreq>
@@ -32,6 +27,16 @@
     </url>
     <url>
          <loc>https://www.technotes.ie/tech_humour/</loc>
+         <lastmod>2024-03-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.technotes.ie/helloworld/assembler/</loc>
+         <lastmod>2024-03-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.technotes.ie/helloworld/c/</loc>
          <lastmod>2024-03-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
