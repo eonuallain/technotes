@@ -9,3 +9,14 @@ plugins:
   - kroki:
       FileTypes:
         - svg
+nav:
+  - 'index.md'
+  - 'helloworld':
+    - 'helloworld/assembler.md'
+    - 'helloworld/c.md'
+  - 'diagram_as_code.md'
+  - 'kubernetes':
+    - 'kubernetes/cluster_pi.md'
+  - 'lets_encrypt.md'
+  - 'mkdocs.md'
+  - 'tech_humour.md'

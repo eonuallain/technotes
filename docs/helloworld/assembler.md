@@ -1,4 +1,4 @@
-## Assembler helloworld ##
+# Assembler #
 
 Install `nasm` if not available on your system. On my Ubuntu box I ran
 ```
@@ -46,3 +46,5 @@ Use the GNU linker to create an output file (executable) `helloworld` from the `
        elf_k1om
        i386pep
        i386pe
+
+Running `ls -l` shows the executable `helloworld` is 8648 bytes in size.
