@@ -36,6 +36,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.technotes.ie/helloworld/rust/</loc>
+         <lastmod>2024-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.technotes.ie/kubernetes/cluster_pi/</loc>
          <lastmod>2024-03-18</lastmod>
          <changefreq>daily</changefreq>

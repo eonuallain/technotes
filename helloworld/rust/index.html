@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://www.technotes.ie/helloworld/assembler/">
+        <link rel="canonical" href="https://www.technotes.ie/helloworld/rust/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../c/">
       
       
-        <link rel="next" href="../c/">
+        <link rel="next" href="../../diagram_as_code/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Assembler - www.technotes.ie</title>
+        <title>Rust - www.technotes.ie</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#assembler" class="md-skip">
+        <a href="#rust" class="md-skip">
           Skip to content
         </a>
       
@@ -100,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Assembler
+              Rust
             
           </span>
         </div>
@@ -210,19 +210,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../assembler/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -231,7 +222,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -262,10 +252,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../rust/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -274,6 +273,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -462,49 +462,25 @@
                   
 
 
-<h1 id="assembler">Assembler</h1>
-<p>Install <code>nasm</code> if not available on your system. On my Ubuntu box I ran</p>
-<pre><code>sudo apt install -y nasm
+<h1 id="rust">Rust</h1>
+<p>From the <a href="https://forge.rust-lang.org/infra/other-installation-methods.html">installation methods</a> page on <a href="https://rust-lang.org">rust-lang.org</a> run the following in your shell and follow the steps presented.</p>
+<pre><code>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s --
 </code></pre>
-<p>Save the following to <code>helloworld.asm</code></p>
-<pre><code>section .data
-    hello db 'Hello, World!', 0
+<p>When the installation is finished run the following which add <code>~/.cargo/bin</code> to your PATH environment variable.</p>
+<pre><code>source ~/.cargo/env
+</code></pre>
+<p>Use cargo to create a new project (binary by default), and run it:</p>
+<pre><code>cargo new helloworld
+cd helloworld
 
-section .text
-    global _start
+cargo run
 
-_start:
-    ; write the string to stdout
-    mov eax, 4
-    mov ebx, 1
-    mov ecx, hello
-    mov edx, 13
-    int 0x80
-
-    ; exit the program
-    mov eax, 1
-    xor ebx, ebx
-    int 0x80
+Compiling helloworld v0.1.0 (/home/pi/helloworld)
+Finished dev [unoptimized + debuginfo] target(s) in 3.51s
+    Running `target/debug/helloworld`
+Hello, world!
 </code></pre>
-<p>Compile <code>helloworld.asm</code> with</p>
-<pre><code>nasm -f elf32 -o helloworld.o helloworld.asm
-</code></pre>
-<p>Use the GNU linker to create an output file (executable) <code>helloworld</code> from the <code>helloworld.o</code> object file</p>
-<pre><code>ld -m elf_i386 -o helloworld helloworld.o
-</code></pre>
-<p><code>ld -V</code> will list the available emulations which can be used with the above <code>-m</code> parameter</p>
-<pre><code>GNU ld (GNU Binutils for Ubuntu) 2.38
-  Supported emulations:
-   elf_x86_64
-   elf32_x86_64
-   elf_i386
-   elf_iamcu
-   elf_l1om
-   elf_k1om
-   i386pep
-   i386pe
-</code></pre>
-<p>Running <code>ls -l</code> shows the executable <code>helloworld</code> is 8648 bytes in size.</p>
+<p>Running <code>ls -l</code> shows the executable <code>helloworld</code> is 3792552 bytes in size for the default debug build and 3783888 for a release build (<code>cargo build --release</code>).</p>
 
 
 
